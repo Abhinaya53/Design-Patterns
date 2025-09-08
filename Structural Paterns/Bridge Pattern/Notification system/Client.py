@@ -9,7 +9,7 @@ from PushNotification import PushNotification
 
 class Client:
     def send_all_notifications(self, notification: Notification) -> None:
-        message = "You are accepted in Amazon for SDE1 role"
+        message = "You order 123 is on the way."
         
         notification.set_service_provider(TwilioServiceProvider())
         notification.notify(message)

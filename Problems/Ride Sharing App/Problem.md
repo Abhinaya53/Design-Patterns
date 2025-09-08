@@ -1,5 +1,5 @@
 # Problem Statement:
-Designing a ride sharing application where passengers can request rides, and drivers can be matched to them based on proximity. The application should handle different types of vehicles (such as cars, bikes, luxury cars) and support multiple fare calculation strategies. The system must notify both passengers and drivers about ride statuses and calculate the fare based on the type of ride and distance traveled.
+Designing a ride sharing application where passengers can request rides, and drivers can be matched to them based on proximity. The application should handle different types of vehicles (such as cars, bikes, luxury cars) and support multiple fare calculation strategies. The system must notify both passengers and drivers about ride statuses and calculate the fare based on the type of ride and distance travelled.
 
 Your task is to design a clean, maintainable, and scalable solution using SOLID principles and appropriate Design Patterns. Follow the requirements carefully and ensure that your code adheres to good software design practices.
 
