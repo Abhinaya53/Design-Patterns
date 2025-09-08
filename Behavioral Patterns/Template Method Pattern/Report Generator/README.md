@@ -1,0 +1,2 @@
+# Problem Statement: 
+You are designing a report generation application that allows users to create different types of reports, such as Sales Reports, Employee Reports, and Inventory Reports. Each report has a similar structure but varies in the details and the way data is processed. The application should enable users to generate reports using a template method that defines the skeleton of the report creation process while allowing subclasses to provide specific implementations for certain steps.
