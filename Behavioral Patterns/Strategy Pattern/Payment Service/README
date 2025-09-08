@@ -1,0 +1,23 @@
+# Problem Statement:
+Design a payment service app that would accept various methods of payments: 
+1. Credit Cards
+2. Debit Cards
+3. UPI
+
+# Naive Method: 
+Using conditional statements based on the payment method.
+
+Although this methods works it violates:
+1. OCP: Everytime we want to add a new payment method in future, we will have to modify already existing code.
+2. SRP: The PaymentService class have multiple responsiblity.
+
+# Strategy Pattern Solution:
+1. Extract each payment method into its own class that implements a shared interface (PaymentStrategyInterface).
+2. These become interchangeable strategy objects.
+3. The PaymentService (Context) holds a reference to a strategy and delegates the processing payment task to it.
+4. Clients (User) can swap strategies at runtime.
+5. Flexibly changing payment behavior without touching the PaymentService itself.
+6. OCP is followed. Adding a new payment method won't need any change in PaymentService now.
+7. SRP is followed. Every payment method has it's own class.
+
+This design dramatically simplifies maintenance and enhances flexibility.

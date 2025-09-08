@@ -1,0 +1,25 @@
+# Problem:
+Design a document class. A document can be in one of three states: 
+- Draft
+- Moderation
+- Published. 
+
+The publish method of the document works a little bit differently in each state:
+- In Draft, it moves the document to moderation.
+- In Moderation, it makes the document public, but only if the current user is an administrator.
+- In Published, it doesn’t do anything at all.
+
+# Naive Approach:
+Use conditional statements or a swich case to handle different states. But the issue with this approach would be:
+- If there is a future requirement to add a new state of document, we would have to go and change the already existing and tested files which might lead to potential bugs. This violates OCP.
+- Maintainability becomes difficult as any change in transitional logic will require change in switch conditional logic.
+- SRP is also violated as publish() handles both business logic and state-specific transitions.
+- State logic may be duplicated across methods which leads to DRY (Don't Repeat Yourself) principle violation.
+
+# Solution: State Pattern
+- Instead of embedding in the conditionals, we can define a State interface which will have method publish().
+- Context class (i.e., Document) will have reference to the state object (current state).
+- It delegates the state specific behavior to the state object (DraftState, ModerationState, PublishedState).
+- To transition states the concrete state object replaces the context's state object.
+- Although this may sound a lot like Strategy pattern, the key difference between both is that in Strategy pattern, the different concrete strategies are not aware of each other. Whereas, in State pattern different states may be aware of each other to initiate transitions.
+

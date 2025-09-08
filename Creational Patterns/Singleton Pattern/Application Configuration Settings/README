@@ -1,0 +1,19 @@
+# Problem:
+Suppose we are creating an app. An app usually needs global configuration values (database URL, API keys, etc.).
+
+# Naive Approach:
+Load config multiple times. This will allow multiple objects of config settings to exist. This is a problem because:
+- Inconsistent settings across modules.
+- Suppose creating one config takes 100MB, then if 5 objects are created then it will take 500MB. This leads to wasted memory.
+- Hard to debug errors if some parts of the app read stale/incorrect values.
+- DIP is violated because high level modules like Application directly uses AppConfig instead of depending on their abstraction.
+Violates the SRP if configuration logic is scattered.
+
+# Solution: Single Pattern
+Singleton pattern solves this by:
+- Make the default constructor private, to prevent other objects from using the new operator with the Singleton class. 
+- Create a static creation method that acts as a constructor. Under the hood, this method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.
+- If your code has access to the Singleton class, then it’s able to call the Singleton’s static method. So whenever that method is called, the same object is always returned.
+
+## Note:
+In Python we can't directly make the constructor private unlike Java, so we raise an error if the constructor is ever called.

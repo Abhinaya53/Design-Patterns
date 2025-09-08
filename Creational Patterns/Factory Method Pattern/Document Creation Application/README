@@ -1,0 +1,6 @@
+# Problem:
+Design a Document Creation Application.
+- The application should allow users to create different types of documents, such as PDF, Word, and HTML.
+- Each document type will have a method to open, save, and close the document.
+- The system should be designed in a way that makes it easy to add new document types in the future without modifying existing code.
+- Clients should work with a common interface and not worry about the exact type of document being created.

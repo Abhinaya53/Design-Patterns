@@ -1,0 +1,17 @@
+# Problem Statement:
+Design a text editor and that has a toolbar with buttons. Each button looks similar but performs different actions when clicked. It has the following buttons:
+1. Bold
+2. Italic
+
+# Naive approach: 
+Create a subclass of Button for every distinct action (e.g., BoldButton, ItalicButton, etc.) with their click logic embedded inside. But this may lead to:
+1. Too many subclasses, making the GUI messy.
+2. Modifying the base Button class risks breaking all subclasses.
+3. Your UI code becomes tightly coupled with business logic, making maintenance difficult.
+
+# Command Pattern Solution:
+1. Encapsulate each action (e.g., bold, italic, underline) into its own Command object implementing a shared interface.
+2. The Button class (or any UI trigger) holds a reference to a Command object.
+3. When the button is clicked, it delegates to the command.execute() method instead of having its own logic.
+
+This approach decouples the UI components from the business operations they trigger, making the system modular and flexible.

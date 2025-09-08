@@ -1,0 +1,18 @@
+# Problem:
+Suppose you are designing an GUI Toolkit and you have products like Button, Checkbox, etc. Each product has a family of products. For example, each Button product can be of type WindowButton or MacButton. Similarly, each Checkbox product can be of type WindowCheckbox or MacCheckbox.
+
+# Naive Approach:
+We can have conditional statements for each product and instantiate accordingly. The problems with this approach are:
+- Tight Coupling: Hardcode the creation of these objects (e.g., if platform == "Windows": return WindowsButton()), makes our code tightly coupled to specific classes.
+- This makes it hard to switch product families (Windows → macOS) or add new families.
+- OCP: Adding a new product family forces changes to client code.
+- SRP: Client takes both business logic and creation logic.
+- DIP: Client depends on concrete classes instead of abstractions.
+
+# Solution: Abstract Factory
+- Introduce an Abstract Factory interface that declares creation methods for each type of product (e.g., create_button(), create_checkbox()).
+- Concrete factories (e.g., WindowsFactory, MacFactory) implement this interface to produce products from the same family.
+- Client code works only with the factory interface and product interfaces—it doesn’t know the concrete classes.
+- Now we can add new families by creating new factories without touching client code. Thus, OCP is followed. 
+- Client only handles business logic, factory handles creation. Hence, SRP is maintained.
+- Client depends on abstractions (factories/products) not concretes. Thus, DIP is followed.

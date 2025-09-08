@@ -1,0 +1,4 @@
+In Python there is no explicit Iterator interface like Java.
+Instead, Python uses protocols (duck typing).
+A collection is iterable if it defines __iter__.
+An iterator is any object with __iter__ and __next__.

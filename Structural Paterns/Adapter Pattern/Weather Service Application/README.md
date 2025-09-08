@@ -1,0 +1,2 @@
+# Problem:
+You are developing a weather application that needs to fetch weather data from multiple sources. The legacy weather service provides weather data in XML format through a get_weather_data() method. However, you also want to incorporate a new third-party weather service that provides data in JSON format using a fetch_weather() method.

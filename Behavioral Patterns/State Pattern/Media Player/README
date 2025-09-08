@@ -1,0 +1,7 @@
+# Problem Statement:
+Design a Media Player Application that allows users to play, pause, and stop audio tracks. \nThe media player transitions between different states (e.g., Playing, Paused, Stopped), and each state dictates how the player behaves when the user interacts with the play, pause, or stop buttons.
+
+For example:
+- In the Playing state, pressing the pause button will pause the track, while pressing the stop button will stop it.
+- In the Paused state, pressing the play button will resume the track, and pressing the stop button will stop it.
+- In the Stopped state, pressing the play button will start the track from the beginning.

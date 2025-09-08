@@ -1,0 +1,2 @@
+# Problem:
+Design a graphic editor that supports drawing shapes (like circles, squares, etc.) and grouping them into complex shapes. The editor should allow operations like move, draw, etc. both individual shapes and groups of shapes.
