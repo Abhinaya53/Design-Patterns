@@ -57,4 +57,8 @@
 - **Decorator:** Adds behaviors to objects dynamically.
 - **Facade:** Helps in Simplifying the complex system interfaces.
 - **Flyweight:** Shares common parts of state between multiple objects to reduce memory.
-- **Proxy:** Controls the access to an object. 
+- **Proxy:** Controls the access to an object.
+
+# References:
+- [Refactoring Guru](https://refactoring.guru/design-patterns)
+- [Geeks for Geeks Cheat Sheet](https://www.geeksforgeeks.org/system-design/design-patterns-cheat-sheet-when-to-use-which-design-pattern/)
